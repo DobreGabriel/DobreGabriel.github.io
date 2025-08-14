@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth; /* Scroll fluido */
+    }
+
+    .anchor-target {
+      scroll-margin-top: 120px; /* Evita che la navbar fissa copra l'ancora */
+    }
+
     body {
       margin: 0;
       background-color: #01030B;
@@ -491,14 +499,14 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
 
   <div class="navbar-container">
     <div class="navbar">
-      <a href="#">Home</a>
-      <a href="#">Esperienze</a>
-      <a href="#">Progetti</a>
-      <a href="#">Contatti</a>
+      <a href="#top">Home</a>
+      <a href="#section-esperienze">Esperienze</a>
+      <a href="#section-progetti">Progetti</a>
+      <a href="#section-contatti">Contatti</a>
     </div>
   </div>
 
@@ -524,7 +532,8 @@
   </div>
 
   <br><br><br><br><br>
-  <hr class="divider">
+  <!-- Anchor per la sezione Esperienze/Istruzione -->
+  <hr class="divider anchor-target" id="section-esperienze">
 
   <div class="esperienza">Esperienza:</div>
 
@@ -600,29 +609,9 @@
     </div>
   </div>
 
-  <script>
-    function mostraLavoro() {
-      document.getElementById("btn-lavoro").classList.add("active");
-      document.getElementById("btn-istruzione").classList.remove("active");
-      
-      document.getElementById("timeline-lavoro").classList.add("active");
-      document.getElementById("timeline-istruzione").classList.remove("active");
-    }
-
-    function mostraIstruzione() {
-      document.getElementById("btn-istruzione").classList.add("active");
-      document.getElementById("btn-lavoro").classList.remove("active");
-      
-      document.getElementById("timeline-istruzione").classList.add("active");
-      document.getElementById("timeline-lavoro").classList.remove("active");
-    }
-
-    window.onload = () => {
-      mostraLavoro();
-    };
-  </script>
-  
+  <!-- Anchor per la sezione Progetti -->
   <br><br><br>
+  <hr class="divider anchor-target" id="section-progetti">
   <div class="esperienza">Progetti:</div>
 
   <div class="projects-container">
@@ -664,8 +653,9 @@
       </div>
     </div>
   </div>
-<br><br><br><br><br>
-  <div class="footer">
+
+  <br><br><br><br><br>
+  <div class="footer anchor-target" id="section-contatti">
     <span>©Gabriel Dobre | Portfolio</span>
     <div class="footer-links">
       <a class="link" href="https://www.linkedin.com/in/gabriel-dobre-4b321036b" target="_blank"><i class="fa-brands fa-linkedin" style="color:#ffffff"></i></a>
@@ -673,6 +663,28 @@
       <a class="link" href="https://github.com/DobreGabriel" target="_blank"><i class="fa-brands fa-github" style="color:#ffffff"></i></a>
     </div>
   </div>
+
+  <script>
+    function mostraLavoro() {
+      document.getElementById("btn-lavoro").classList.add("active");
+      document.getElementById("btn-istruzione").classList.remove("active");
+      
+      document.getElementById("timeline-lavoro").classList.add("active");
+      document.getElementById("timeline-istruzione").classList.remove("active");
+    }
+
+    function mostraIstruzione() {
+      document.getElementById("btn-istruzione").classList.add("active");
+      document.getElementById("btn-lavoro").classList.remove("active");
+      
+      document.getElementById("timeline-istruzione").classList.add("active");
+      document.getElementById("timeline-lavoro").classList.remove("active");
+    }
+
+    window.onload = () => {
+      mostraLavoro();
+    };
+  </script>
   
 </body>
 </html>
