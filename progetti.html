@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: #01030B;
+      color: white;
+      font-family: 'Inter', sans-serif; 
+    }
+
+    .navbar-container {
+      border: 1px solid #2b2f38;
+      background-color: #01030B;
+      position: fixed;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      border-radius: 25px;
+      overflow: hidden;
+      padding: 0 20px;
+    }
+
+    .navbar {
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .navbar a {
+      color: #cccccc;
+      margin: 0 15px;  
+      text-decoration: none;
+      font-size: 15px;  
+    }
+
+    .navbar a:hover {
+      color: white;
+    }
+
+    .divider {
+      border: none;
+      height: 2px;
+      background-color: #2b2f38;
+      margin: 40px 0;
+    }
+
+    .esperienza {
+      color: #b4b0b0fa;
+      font-size: 16px;
+      margin-bottom: 20px;
+      margin-left:34%;
+    }
+
+    .projects-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px auto;
+      max-width: 620px;
+    }
+
+    .project-card {
+      width: 300px;
+      border: 1px solid #2b2f38;
+      border-radius: 15px;
+      background-color: rgba(43, 47, 56, 0.1);
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #475569;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 160px;
+      background-color: #1a1c22;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .project-screenshot {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-title {
+      color: #e6edf3;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .project-description {
+      color: #c9d1d9;
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 15px;
+    }
+
+    .tag {
+      background-color: #2b2f38;
+      color: #c9d1d9;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .project-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 13px;
+      padding: 5px 10px;
+      border: 1px solid #475569;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      color: white;
+      border-color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .project-link i {
+      font-size: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .projects-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 90%;
+      }
+      
+      .project-card {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .footer{
+      color: #b4b0b0fa;
+      font-size: 14px;
+      margin-bottom: 20px;
+      margin-left: 34%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 600px;
+    }
+
+    .footer .link {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      margin: 0 5px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar-container">
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html">Esperienze</a>
+      <a href="#top">Progetti</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+  <hr class="divider">
+  <div class="esperienza">Progetti:</div>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/bruteforce.png" alt="bruteforce" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Bruteforce Attack </h3>
+        <p class="project-description">Ho creato un semplice attacco di forza bruta usando bash, per provare tante password da remoto per tentare l'accesso ad un PC.</p>
+        <div class="project-tags">
+          <span class="tag">Bash</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/DobreGabriel/Bruteforce.git" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/keylogger.png" alt="keylogger" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Keylogger</h3>
+        <p class="project-description">Creato un semplice keylogger che registra tutto ciò che un utente digita sulla tastiera usando Python.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/DobreGabriel/keylogger" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/SQLCRYP.png" alt="bruteforce" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Comunicazione Multi Client-Server SQL con la Crittografia</h3>
+        <p class="project-description">Comunicazione Multi Client-Server usando un database SQL per registrare login,registrazioni di utenti e il salvataggio dei messaggi inviati, usando la crittografia simmetrica</p>
+        <div class="project-tags">
+          <span class="tag">SQL</span>
+        <span class="tag">C#</span>
+        <span class="tag">SHA-256</span>
+        <span class="tag">AES</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/users/DobreGabriel/projects/3" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/sqlinjection.png" alt="keylogger" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">SQL-INJECTION-SCANNER</h3>
+        <p class="project-description">Strumento in Python per rilevare vulnerabilità di tipo SQL Injection su siti web.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/DobreGabriel/SQL-INJECTION-SCANNER" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/honeypot.png" alt="bruteforce" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">honeypot</h3>
+        <p class="project-description">honeypot per rilevare attacchi e catturare attacchi malevoli</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+        <span class="tag">VM</span>
+        <span class="tag">Oracle Box</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/DobreGabriel/Honeypot-per-catturare-hackers" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/Tripwire.png" alt="keylogger" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Tripwire</h3>
+        <p class="project-description">Tripwire per rilevare e catturare file malevoli con l'uso di Python</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/DobreGabriel/Tripwire-per-rilevare-e-catturare-malware-files" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-container">
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/XSS.png" alt="bruteforce" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">XSS Scanner</h3>
+        <p class="project-description">XSS Scanner per testare le vulnerabilità XSS su ambienti locali o di laboratorio</p>
+        <div class="project-tags">
+          <span class="tag">Javascript</span>
+        <span class="tag">JSON</span>
+        <span class="tag">Docker</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/DobreGabriel/XSS-scanner" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-image">
+        <img src="img/2FA.png" alt="keylogger" class="project-screenshot">
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Autentificazione a 2 Fattori</h3>
+        <p class="project-description">3 tipi di autentificazione a 2 fattori: uno base, uno avendo il codice che ogni 30 secondi cambia e uno usando il qrcode</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/DobreGabriel/autentificazione-a-2-fattori" class="project-link">
+            <i class="fa-brands fa-github"></i>
+            Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br><br>
+  <div class="footer anchor-target" id="section-contatti">
+    <span>©Gabriel Dobre | Portfolio</span>
+    <div class="footer-links">
+      <a class="link" href="https://www.linkedin.com/in/gabriel-dobre-4b321036b" target="_blank"><i class="fa-brands fa-linkedin" style="color:#ffffff"></i></a>
+      <a class="link" href="https://mail.google.com/mail/u/0/?ogbl#inbox?compose=new" target="_blank"><i class="fa-solid fa-envelope" style="color:#ffffff"></i></a>
+      <a class="link" href="https://github.com/DobreGabriel" target="_blank"><i class="fa-brands fa-github" style="color:#ffffff"></i></a>
+    </div>
+  </div>
+
+</body>
+</html>

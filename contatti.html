@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background-color: #01030B; color: white; font-family: 'Inter', sans-serif; }
+    .navbar-container { border: 1px solid #2b2f38; background-color: #01030B; position: fixed; top: 40px; left: 50%; transform: translateX(-50%); z-index: 1000; border-radius: 25px; overflow: hidden; padding: 0 20px; }
+    .navbar { padding: 20px 0; text-align: center; }
+    .navbar a { color: #cccccc; margin: 0 15px; text-decoration: none; font-size: 15px; }
+    .navbar a:hover { color: white; }
+    .section-title { color: #b4b0b0fa; font-size: 20px; margin-bottom: 20px; text-align: center; }
+    .contact-container { max-width: 600px; margin: 100px auto; background-color: rgba(43, 47, 56, 0.1); backdrop-filter: blur(10px); border: 1px solid #2b2f38; border-radius: 15px; padding: 30px; margin-top: 10%; }
+    .form-group { margin-bottom: 20px; }
+    label { display: block; margin-bottom: 6px; font-size: 14px; color: #c9d1d9; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #475569; border-radius: 8px; background-color: #01030B; color: white; font-size: 14px; box-sizing: border-box; }
+    textarea { resize: vertical; min-height: 100px; }
+    button { background-color: white; color: #0f1117; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+    button:hover { background-color: #cccccc; }
+    .footer { color: #b4b0b0fa; font-size: 14px; margin-bottom: 20px; margin-left: 34%; display: flex; align-items: center; justify-content: space-between; max-width: 600px; }
+    .footer .link { width: 30px; height: 30px; font-size: 16px; border: none; border-radius: 0; padding: 0; margin: 0 5px; }
+    .footer-links { display: flex; gap: 10px; }
+    .success-message { display: none; color: #00ff00; text-align: center; margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <div class="navbar-container">
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html">Esperienze</a>
+      <a href="progetti.html">Progetti</a>
+      <a href="contatti.html">Contatti</a>
+    </div>
+  </div>
+
+  <div class="contact-container">
+    <h2 class="section-title">Contattami</h2>
+
+    <!-- Form con Formspree -->
+    <form id="contactForm" action="https://formspree.io/f/mzzjzgrq" method="POST">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Il tuo nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="La tua email" required>
+      </div>
+      <div class="form-group">
+        <label for="messaggio">Messaggio</label>
+        <textarea id="messaggio" name="messaggio" placeholder="Scrivi il tuo messaggio..." required></textarea>
+      </div>
+      <button type="submit">Invia</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+      ✅ Grazie! Il tuo messaggio è stato inviato.
+    </div>
+  </div>
+
+  <div class="footer anchor-target" id="section-contatti">
+    <span>©Gabriel Dobre | Portfolio</span>
+    <div class="footer-links">
+      <a class="link" href="https://www.linkedin.com/in/gabriel-dobre-4b321036b" target="_blank"><i class="fa-brands fa-linkedin" style="color:#ffffff"></i></a>
+      <a class="link" href="mailto:dobre081105@gmail.com"><i class="fa-solid fa-envelope" style="color:#ffffff"></i></a>
+      <a class="link" href="https://github.com/DobreGabriel" target="_blank"><i class="fa-brands fa-github" style="color:#ffffff"></i></a>
+    </div>
+  </div>
+
+  <script>
+    // Mostra messaggio di conferma senza ricaricare la pagina
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        successMessage.style.display = 'block';
+        form.reset();
+      } else {
+        alert('Errore nell\'invio del messaggio. Riprova più tardi.');
+      }
+    });
+  </script>
+
+</body>
+</html>
