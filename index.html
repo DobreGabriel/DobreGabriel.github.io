@@ -32,9 +32,8 @@
       z-index: 1000;
       border-radius: 25px;
       overflow: hidden;
-      padding: 0 20px;
+      padding: 0 16px;
       white-space: nowrap;
-      max-width: calc(100vw - 32px);
       box-sizing: border-box;
     }
 
@@ -467,9 +466,18 @@
     }
 
     @media (max-width: 600px) {
+      .navbar-container {
+        top: 14px;
+        padding: 0 10px;
+      }
+
+      .navbar {
+        padding: 12px 0;
+      }
+
       .navbar a {
-        margin: 0 8px;
-        font-size: 13px;
+        margin: 0 6px;
+        font-size: 12px;
       }
 
       .cyber {
