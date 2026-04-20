@@ -361,19 +361,17 @@
     }
 
     .projects-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
       margin: 30px auto;
       max-width: 660px;
       padding: 0 16px;
       box-sizing: border-box;
-      flex-wrap: wrap;
     }
 
     .project-card {
-      width: 300px;
-      max-width: 100%;
+      min-width: 0;
       border: 1px solid #2b2f38;
       border-radius: 15px;
       background-color: rgba(43, 47, 56, 0.1);
@@ -523,12 +521,10 @@
       .projects-container {
         gap: 10px;
         padding: 0 10px;
-        max-width: 100%;
       }
       
       .project-card {
-        width: calc(50% - 5px);
-        max-width: calc(50% - 5px);
+        min-width: 0;
       }
 
       .project-image {
